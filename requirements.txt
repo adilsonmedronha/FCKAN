@@ -1,0 +1,6 @@
+pykan
+aeon
+matplotlib
+numpy
+scikit-learn
+tqdm

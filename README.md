@@ -1,2 +1,2 @@
 # FKAN
-kan
+python=3.12
