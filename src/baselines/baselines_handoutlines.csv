@@ -1,0 +1,4 @@
+Dataset,Classifier,Accuracy
+HandOutlines,FCN,0.9243243243243243
+HandOutlines,MLP,0.9108108108108108
+HandOutlines,CNN,0.8648648648648649

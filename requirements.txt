@@ -1,6 +1,6 @@
 pykan
-aeon
 matplotlib
 numpy
 scikit-learn
 tqdm
+tensorflow[and-cuda]
