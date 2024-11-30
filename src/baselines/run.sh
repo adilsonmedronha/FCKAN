@@ -1,4 +1,10 @@
-python train.py --datasets HandOutlines ItalyPowerDemand --output_csv baselines_handoutlines_run_1.csv
-python train.py --datasets HandOutlines ItalyPowerDemand --output_csv baselines_handoutlines_run_2.csv
-python train.py --datasets HandOutlines ItalyPowerDemand --output_csv baselines_handoutlines_run_3.csv
-#python train.py --datasets ItalyPowerDemand PhalangesOutlinesCorrect HandOutlines StarLightCurves Rock --output_csv baselines.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_1.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_2.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_3.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_4.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_5.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_6.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_7.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_8.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_9.csv
+python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_10.csv

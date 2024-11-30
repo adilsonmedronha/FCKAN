@@ -29,17 +29,17 @@ def train_and_evaluate(classifier_name, dataset_name, X_train, y_train, X_test, 
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
-    f1_score = f1_score(y_test, y_pred, average='weighted')
-    print(f"{classifier_name} Accuracy: {accuracy:.4f} F1 Score: {f1_score:.4f}")
-    return accuracy, f1_score
+    f1 = f1_score(y_test, y_pred, average='weighted')
+    print(f"{classifier_name} Accuracy: {accuracy:.4f} F1 Score: {f1:.4f}")
+    return accuracy, f1
 
-def save_to_csv(filepath, dataset_name, classifier_name, accuracy):
+def save_to_csv(filepath, dataset_name, classifier_name, accuracy, f1_score):
     file_exists = os.path.isfile(filepath)
     with open(filepath, mode="a", newline="") as file:
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(["Dataset", "Classifier", "Accuracy", 'F1 Score'])
-        writer.writerow([dataset_name, classifier_name, accuracy])
+        writer.writerow([dataset_name, classifier_name, accuracy, f1_score])
 
 def main():
     parser = ArgumentParser()
