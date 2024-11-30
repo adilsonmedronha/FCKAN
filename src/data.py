@@ -9,3 +9,4 @@ dataset_name = "ProximalPhalanxOutlineCorrect"
 
 X_train, y_train = load_classification(name=dataset_name, split='train')
 X_test, y_test = load_classification(name=dataset_name, split='test')
+
