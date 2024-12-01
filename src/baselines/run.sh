@@ -1,10 +1,7 @@
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_1.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_2.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_3.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_4.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_5.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_6.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_7.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_8.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_9.csv
-python train.py --datasets Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect --output_csv baselines_run_10.csv
+#!/bin/bash
+
+DATASETS="Wafer HandOutlines Strawberry TwoPatterns DistalPhalanxOutlineCorrect"
+
+for i in {1..10}; do
+    python train.py --datasets $DATASETS --output_csv baselines_run_$i.csv
+done
