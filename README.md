@@ -1,2 +1,2 @@
-# FKAN
+# FCKAN
 python=3.12
