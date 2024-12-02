@@ -1,21 +1,29 @@
-from aeon.classification.deep_learning import FCNClassifier, MLPClassifier, CNNClassifier
+from aeon.classification.deep_learning import FCNClassifier, MLPClassifier, TimeCNNClassifier
 from aeon.datasets import load_classification
 from sklearn.metrics import accuracy_score, f1_score
 from argparse import ArgumentParser
 import os
 import csv
 import numpy as np
+import torch
+import random 
 
-random_state = 42
-np.random.seed(random_state)
+def set_seed(seed: int):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    np.random.seed(seed)  
+    random.seed(seed)  
+    torch.backends.cudnn.benchmark = False
+    torch.backends.cudnn.deterministic = True
 
-#os.environ['AEON_DEPRECATION_WARNING'] = 'False'
-#os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+os.environ['AEON_DEPRECATION_WARNING'] = 'False'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 CLASSIFIERS = {
     "FCN": FCNClassifier,
     "MLP": MLPClassifier,
-    "CNN": CNNClassifier,
+    "CNN": TimeCNNClassifier,
 }
 
 def train_and_evaluate(classifier_name, dataset_name, X_train, y_train, X_test, y_test):
@@ -43,6 +51,7 @@ def save_to_csv(filepath, dataset_name, classifier_name, accuracy, f1_score):
 
 def main():
     parser = ArgumentParser()
+    parser.add_argument("--seed", type=int)
     parser.add_argument("--datasets", type=str, nargs="+", default=["HandOutlines"])
     parser.add_argument(
         "--classifiers",
@@ -52,6 +61,8 @@ def main():
     )
     parser.add_argument("--output_csv", type=str, default="results.csv")
     args = parser.parse_args()
+    print(type(args.seed), args.seed)
+    set_seed(args.seed) 
 
     for dataset_name in args.datasets:
         print(f"\nCarregando dataset: {dataset_name}")
